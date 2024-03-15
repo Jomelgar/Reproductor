@@ -58,7 +58,7 @@ public class Music extends Thread implements Serializable{
     public void PauseMusic() {
         try {
             if (BackGroundSound != null && BackGroundSound.isOpen()) {
-                BackGroundSound.wait();
+                BackGroundSound.stop();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -67,7 +67,7 @@ public class Music extends Thread implements Serializable{
     public void ContinueMusic() {
         try {
             if (BackGroundSound != null && BackGroundSound.isOpen()) {
-                BackGroundSound.notifyAll();
+                BackGroundSound.start();
             }
         } catch (Exception e) {
             e.printStackTrace();

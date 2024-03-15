@@ -9,6 +9,6 @@ package reproductor;
  * @author jomel
  */
 public class Reproductor {
-    public static Thread thread;
+    public static Musica.Music thread;
     public static Musica.Panel panel;
 }

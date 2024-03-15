@@ -112,8 +112,11 @@ public class Panel extends javax.swing.JPanel implements Serializable{
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
         // TODO add your handling code here:
+        if(Reproductor.thread!= null){
+            Reproductor.thread.CloseMusic();
+        }
         Reproductor.thread = cancion.musica;
-        Reproductor.thread.run();
+        Reproductor.thread.OpenMusic();
         reproductor.Spotify.agregarPanel(new Panel(cancion));
     }//GEN-LAST:event_formMouseClicked
 
